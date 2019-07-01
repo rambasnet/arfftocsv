@@ -1,15 +1,22 @@
 # ARFF to CSV converter
+
 A python script to convert ARFF files to CSV
 
-## Usage
-1. Put all your .arff files in a directory
-2. Place this script in the same directory as the files
-3. Run the script
-4. All the CSV files will be created in the same directory
+# forked from:
 
-```
-python arffToCsv.py
-```
+https://github.com/haloboy777/arfftocsv
+
+## Usage
+
+1. Download this script
+2. Run the script
+
+    ```
+    python3 arffToCsv.py directoryPath
+    ```
+
+3. All the CSV files will be created in the same directory
 
 ## Having an issue?
-Raise an issue and I'll try to resolve it as soon as possible
+
+Raise an issue and I'll try to resolve it.

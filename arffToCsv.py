@@ -2,14 +2,14 @@
 # Project   : ARFF to CSV converter     #
 # Created   : 10/01/17 11:08:06         #
 # Author    : haloboy777                #
+# Update by : rambasnet                 #
 # Licence   : MIT                       #
 #########################################
 
 # Importing library
 import os
+import sys
 
-# Getting all the arff files from the current directory
-files = [arff for arff in os.listdir('.') if arff.endswith(".arff")]
 
 # Function for converting arff list to csv list
 def toCsv(content):
@@ -31,11 +31,25 @@ def toCsv(content):
             newContent.append(line)
     return newContent
 
-# Main loop for reading and writing files
-for file in files:
-    with open(file , "r") as inFile:
-        content = inFile.readlines()
-        name,ext = os.path.splitext(inFile.name)
-        new = toCsv(content)
-        with open(name+".csv", "w") as outFile:
-            outFile.writelines(new)
+
+def main(dirPath):
+    # Main loop for reading and writing files
+    # Getting all the arff files from the given directory
+    files = [os.path.join(dirPath, arff)
+             for arff in os.listdir(dirPath) if arff.endswith(".arff")]
+    for file in files:
+        with open(file, "r") as inFile:
+            content = inFile.readlines()
+            name, ext = os.path.splitext(inFile.name)
+            new = toCsv(content)
+            with open(name+".csv", "w") as outFile:
+                outFile.writelines(new)
+    print('all done...')
+
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print('Usage: python3 arffToCsv.py directoryPath')
+        sys.exit()
+
+    main(sys.argv[1])
