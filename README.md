@@ -2,7 +2,7 @@
 
 A python script to convert ARFF files to CSV
 
-# forked from:
+# Forked from
 
 https://github.com/haloboy777/arfftocsv
 
