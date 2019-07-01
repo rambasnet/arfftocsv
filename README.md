@@ -8,14 +8,14 @@ https://github.com/haloboy777/arfftocsv
 
 ## Usage
 
-1. Download this script
+1. Download this arrfToCsv.py script by itself or clone this repo
 2. Run the script
 
     ```
     python3 arffToCsv.py directoryPath
     ```
 
-3. All the CSV files will be created in the same directory
+3. Corresponding CSV files will be created in the same directory
 
 ## Having an issue?
 
